@@ -4,6 +4,7 @@ class_name LevelExecuter
 signal on_level_end
 
 var _is_level_ended := false
+export var camera_zoom = Vector2(1, 1)
 
 
 func _ready():

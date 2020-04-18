@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Images/eye_circle_16.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/eye_pupil.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/eye.gd" type="Script" id=3]
+
+[node name="Eye" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+pupil_offset = 3.0
+
+[node name="Pupil" type="Sprite" parent="."]
+texture = ExtResource( 2 )

@@ -1,7 +1,7 @@
 extends Node2D
 
-var levels = ['001', '002', '003', '004']
-var current_level := 3
+var levels = ['001', '002', '003', '004', '005', '006', '007', '008']
+var current_level := 0
 var current_level_scene = null
 
 func _ready():
@@ -21,6 +21,7 @@ func load_current_level():
 	#load level
 	$LevelScene.add_child(current_level_scene)
 	current_level_scene.connect("on_level_end", self, "on_level_end")
+	$Camera2D.zoom = current_level_scene.camera_zoom
 	
 	print("level started")
 	

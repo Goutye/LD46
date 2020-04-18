@@ -16,3 +16,7 @@ func toggle_door():
 
 func on_button_pushed():
 	toggle_door()
+
+
+func _on_Button_on_button_pushed():
+	toggle_door()

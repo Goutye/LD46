@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_slopes.png-801db1fe13ec0257dae3d55dcb8c0f55.stex"
+path="res://.import/ball_character.png-7ac8d93bf2e5ac001d76fc01c557932a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/tileset_slopes.png"
-dest_files=[ "res://.import/tileset_slopes.png-801db1fe13ec0257dae3d55dcb8c0f55.stex" ]
+source_file="res://Assets/Images/ball_character.png"
+dest_files=[ "res://.import/ball_character.png-7ac8d93bf2e5ac001d76fc01c557932a.stex" ]
 
 [params]
 

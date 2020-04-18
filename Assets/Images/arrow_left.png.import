@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_slopes.png-801db1fe13ec0257dae3d55dcb8c0f55.stex"
+path="res://.import/arrow_left.png-c0576280bdfbb2618b4fcec306bd6c83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/tileset_slopes.png"
-dest_files=[ "res://.import/tileset_slopes.png-801db1fe13ec0257dae3d55dcb8c0f55.stex" ]
+source_file="res://Assets/Images/arrow_left.png"
+dest_files=[ "res://.import/arrow_left.png-c0576280bdfbb2618b4fcec306bd6c83.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

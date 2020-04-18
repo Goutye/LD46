@@ -2,8 +2,12 @@ extends RigidBody2D
 
 signal hit_by_character
 
+onready var eye1 = $CollisionShape2D/Sprite/Eye
+onready var eye2 = $CollisionShape2D/Sprite/Eye2
+
 func _ready():
-	pass
+	eye1.initialize(self)
+	eye2.initialize(self)
 
 func _process(delta):
 	pass

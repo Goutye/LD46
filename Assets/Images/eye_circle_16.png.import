@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_slopes.png-801db1fe13ec0257dae3d55dcb8c0f55.stex"
+path="res://.import/eye_circle_16.png-e5d96abfc4f0ccc2bf2c37a56115c3ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/tileset_slopes.png"
-dest_files=[ "res://.import/tileset_slopes.png-801db1fe13ec0257dae3d55dcb8c0f55.stex" ]
+source_file="res://Assets/Images/eye_circle_16.png"
+dest_files=[ "res://.import/eye_circle_16.png-e5d96abfc4f0ccc2bf2c37a56115c3ff.stex" ]
 
 [params]
 

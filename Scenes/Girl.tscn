@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Scenes/Eye.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/girl_character.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Girl.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Girl.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22, 22 )
 
 [node name="Girl" type="RigidBody2D"]
@@ -13,9 +14,17 @@ contact_monitor = true
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="CollisionShape2D"]
 texture = ExtResource( 2 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Eye" parent="CollisionShape2D/Sprite" instance=ExtResource( 1 )]
+position = Vector2( -6.06205, -2.5743 )
+scale = Vector2( 0.75, 0.75 )
+pupil_offset = 3.0
+
+[node name="Eye2" parent="CollisionShape2D/Sprite" instance=ExtResource( 1 )]
+position = Vector2( 6.06206, -2.5743 )
+scale = Vector2( 0.75, 0.75 )
+pupil_offset = 3.0
