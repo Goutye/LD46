@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Girl
 
 signal hit_by_character
 
@@ -15,3 +16,10 @@ func _process(delta):
 func _on_Girl_body_entered(body):
 	if body is Character:
 		emit_signal("hit_by_character")
+		
+		eye1.set_target(body.position)
+		eye2.set_target(body.position)
+		body.on_collision_with_girl(self)
+		
+		$CollisionShape2D/ParticleHeart.emitting = true
+		$CollisionShape2D/ParticleHeart2.emitting = true

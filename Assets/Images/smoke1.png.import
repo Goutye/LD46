@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow_start.png-ee0c5c3ee5eb5bd990f2d7c7be316be0.stex"
+path="res://.import/smoke1.png-30cfc3782af30ebace5249640d1f9649.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/arrow_start.png"
-dest_files=[ "res://.import/arrow_start.png-ee0c5c3ee5eb5bd990f2d7c7be316be0.stex" ]
+source_file="res://Assets/Images/smoke1.png"
+dest_files=[ "res://.import/smoke1.png-30cfc3782af30ebace5249640d1f9649.stex" ]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/normal_map=0
 flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
-flags/anisotropic=true
+flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false

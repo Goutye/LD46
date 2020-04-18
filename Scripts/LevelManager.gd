@@ -6,6 +6,7 @@ var current_level_scene = null
 
 func _ready():
 	load_current_level()
+	$Heart.connect("anim_end", self, "on_level_end")
 
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
@@ -20,9 +21,10 @@ func load_current_level():
 
 	#load level
 	$LevelScene.add_child(current_level_scene)
-	current_level_scene.connect("on_level_end", self, "on_level_end")
+	current_level_scene.connect("on_level_end", $Heart, "on_level_end")
 	$Camera2D.zoom = current_level_scene.camera_zoom
 	
+	$Heart.on_level_start()
 	print("level started")
 	
 

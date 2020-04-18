@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/LevelManager.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/heart.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Heart.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,3 +12,9 @@ position = Vector2( 512, 320 )
 current = true
 
 [node name="LevelScene" type="Node2D" parent="."]
+
+[node name="Heart" type="Sprite" parent="."]
+position = Vector2( 512, 344 )
+z_index = 100
+texture = ExtResource( 2 )
+script = ExtResource( 3 )

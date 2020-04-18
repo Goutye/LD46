@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Images/eye_16.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/eye_pupil.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/eye.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Eye.gd" type="Script" id=3]
 
 [node name="Eye" type="Sprite"]
 texture = ExtResource( 1 )

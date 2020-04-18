@@ -8,6 +8,8 @@ export var can_move := true
 onready var eye1 = $CollisionShape2D/Sprite/Eye
 onready var eye2 = $CollisionShape2D/Sprite/Eye2
 
+onready var smoke_particles = [$CollisionShape2D/ParticlesSmoke/ParticlesSmoke, $CollisionShape2D/ParticlesSmoke/ParticlesSmoke2, $CollisionShape2D/ParticlesSmoke/ParticlesSmoke3]
+
 var old_velocity = Vector2(0, 0)
 
 func _ready():
@@ -36,6 +38,8 @@ func _on_RigidBody2D_input_event(viewport, event, shape_idx):
 func _expulse():
 	var impulse : Vector2 = get_current_dragging_impulse_vector() * impulse_multiplier
 	apply_central_impulse(impulse)
+	for smoke_particle in smoke_particles:
+		smoke_particle.emitting = true
 
 func get_current_dragging_impulse_vector():
 	var position_click_released : Vector2 = get_global_mouse_position()
@@ -47,3 +51,11 @@ func get_current_dragging_impulse_vector():
 func _on_RigidBody2D_body_entered(body):
 	if body is ButtonPush:
 		body.on_collide_player(self)
+	elif linear_velocity.length_squared() > 10.0:
+		for smoke_particle in smoke_particles:
+			smoke_particle.emitting = true
+		
+
+func on_collision_with_girl(body):
+	eye1.set_target(body.position)
+	eye2.set_target(body.position)
