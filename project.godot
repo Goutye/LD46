@@ -18,17 +18,36 @@ _global_script_classes=[ {
 "class": "Character",
 "language": "GDScript",
 "path": "res://Scripts/Character.gd"
+}, {
+"base": "Node2D",
+"class": "LevelExecuter",
+"language": "GDScript",
+"path": "res://Scripts/LevelExecuter.gd"
 } ]
 _global_script_class_icons={
 "ButtonPush": "",
-"Character": ""
+"Character": "",
+"LevelExecuter": ""
 }
 
 [application]
 
 config/name="LD46"
-run/main_scene="res://Levels/Test.tscn"
+run/main_scene="res://Levels/MainScene.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+flux="*res://flux.gd"
+global="*res://global.gd"
+
+[input]
+
+restart={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 

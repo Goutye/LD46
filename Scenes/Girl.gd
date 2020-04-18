@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+signal hit_by_character
 
 func _ready():
 	pass
@@ -9,4 +10,4 @@ func _process(delta):
 
 func _on_Girl_body_entered(body):
 	if body is Character:
-		print("GG")
+		emit_signal("hit_by_character")

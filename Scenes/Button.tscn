@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Images/button_off.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/button_on.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Button.gd" type="Script" id=3]
+[ext_resource path="res://Assets/PhysMat_SoftBounce.tres" type="PhysicsMaterial" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 9 )
@@ -12,6 +13,7 @@ extents = Vector2( 2, 9 )
 
 [node name="Button" type="RigidBody2D"]
 mode = 1
+physics_material_override = ExtResource( 4 )
 script = ExtResource( 3 )
 
 [node name="OffSprite" type="Sprite" parent="."]
