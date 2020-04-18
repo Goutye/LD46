@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Images/arrow_end.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/arrow_start.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/arrow_middle.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Arrow.gd" type="Script" id=4]
+
+[node name="Arrow" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="start" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 0, -4.5 )
+
+[node name="middle" type="Sprite" parent="start"]
+position = Vector2( 1, 0 )
+scale = Vector2( 1e-05, 1 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -4.5 )
+
+[node name="end" type="Sprite" parent="start"]
+position = Vector2( 1, 0 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -4.5 )
