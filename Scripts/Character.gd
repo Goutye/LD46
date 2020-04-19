@@ -40,6 +40,7 @@ func _on_RigidBody2D_input_event(viewport, event, shape_idx):
 		is_dragging = true
 
 func _expulse():
+	global.character_nb_jumps += 1
 	var impulse : Vector2 = get_current_dragging_impulse_vector() * impulse_multiplier
 	apply_central_impulse(impulse)
 	for smoke_particle in smoke_particles:

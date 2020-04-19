@@ -18,7 +18,7 @@
 [node name="Level" type="Node2D"]
 position = Vector2( -1, 0 )
 script = ExtResource( 6 )
-rope_time = 30
+rope_time = 60
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -187,9 +187,10 @@ __meta__ = {
 }
 
 [node name="SentenceCharacter" type="Node2D" parent="UI"]
+position = Vector2( -20, 53 )
 
 [node name="UICharacter" parent="UI/SentenceCharacter" instance=ExtResource( 10 )]
-position = Vector2( 769, 192 )
+position = Vector2( 761, 208 )
 
 [node name="LabelCharacterDead" type="Label" parent="UI/SentenceCharacter"]
 margin_left = 801.0
@@ -215,6 +216,50 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
 text = "0 dead"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelCharacterJumps" type="Label" parent="UI/SentenceCharacter"]
+margin_left = 801.0
+margin_top = 217.0
+margin_right = 1452.0
+margin_bottom = 266.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "0 propulsions"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SentenceTime" type="Node2D" parent="UI"]
+
+[node name="LabelTimeName" type="Label" parent="UI/SentenceTime"]
+margin_left = 681.0
+margin_top = 163.0
+margin_right = 959.0
+margin_bottom = 212.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "Cleared in "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTimeValue" type="Label" parent="UI/SentenceTime"]
+margin_left = 875.0
+margin_top = 163.0
+margin_right = 1153.0
+margin_bottom = 212.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "20:00"
 __meta__ = {
 "_edit_use_anchors_": false
 }

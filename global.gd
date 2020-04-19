@@ -5,6 +5,7 @@ var girl_nb_killed = 0
 var girl_nb_alive = 0
 var character_nb_killed = 0
 var character_nb_alive = 0
+var character_nb_jumps = 0
 
 func reset_stats():
 	total_time = 0
@@ -12,3 +13,7 @@ func reset_stats():
 	girl_nb_alive = 0
 	character_nb_killed = 0
 	character_nb_alive = 0
+	character_nb_jumps = 0
+
+func _process(delta):
+	total_time += delta

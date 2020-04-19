@@ -1,7 +1,12 @@
 extends Node2D
 
-var levels = ['Title', '002', '003', '004', '005', '006', '007', '008', '009', 'End']
-var current_level := 9
+var levels = ['Title', '001', \
+			'101', '103', '104', '105',
+			'201', '204',\
+			'300', '301', '302', '303',\
+			'404', '405',\
+			'End', '500', '501']
+var current_level := 0
 var current_level_scene = null
 var was_alive = false
 
@@ -23,7 +28,7 @@ func _process(delta):
 		current_level = (current_level + 1) % levels.size()
 		
 	if current_level_scene != null:
-		$UI/Label.text = str(current_level_scene.get_nb_collisions())
+		$UI/Label.text = 'Level ' + levels[current_level]
 
 func load_current_level():
 	#clean up
@@ -52,7 +57,7 @@ func on_level_end(is_alive):
 		current_level = (current_level + 1) % levels.size()
 		$Heart.play_end_level_transition()
 
-		if current_level == 0:
+		if current_level == 1:
 			global.reset_stats()
 	else:
 		print("dead -> restart")
