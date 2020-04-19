@@ -14,6 +14,8 @@ var old_velocity := Vector2(0, 0)
 var has_collided_with_girl := false
 var is_dead := false
 
+onready var global = get_node("/root/global")
+
 func _ready():
 	eye1.initialize(self)
 	eye2.initialize(self)
@@ -56,6 +58,12 @@ func _on_RigidBody2D_body_entered(body):
 	elif linear_velocity.length_squared() > 100.0:
 		if can_track_collisions and not has_collided_with_girl:
 			nb_collisions += 1
+
+			if body is BouncingBox:
+				body.play_sound()
+			else:
+				if not $SoundHit.playing or $SoundHit.get_playback_position() > 0.2:
+					$SoundHit.play()
 			
 		for smoke_particle in smoke_particles:
 			smoke_particle.emitting = true
@@ -68,6 +76,8 @@ func on_collision_with_girl(body):
 		
 func on_hit_by_lava():
 	if not is_dead:
+		global.character_nb_killed += 1
+		
 		is_dead = true
 		flux.to($CollisionShape2D, 0.8, {scale_x = 0.01}, "absolute").ease("quad","out")
 		flux.to($CollisionShape2D, 0.8, {scale_y = 0.01}, "absolute").ease("quad","out")

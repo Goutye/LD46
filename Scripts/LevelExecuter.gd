@@ -48,6 +48,13 @@ func _on_girl_hit_by_character():
 func _on_timer_save_girl_timeout():
 	if not _is_level_ended:
 		_is_level_ended = true
+
+		global.girl_nb_alive += 1
+		for character in $Characters.get_children():
+			if character is Character:
+				if not character.is_dead:
+					global.character_nb_alive += 1
+
 		emit_signal("on_level_end", true)
 			
 func _on_girl_died():

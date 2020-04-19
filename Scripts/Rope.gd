@@ -26,7 +26,7 @@ func _process(delta):
 
 		var ratio = current_rope_time / rope_time
 		var quad_ratio = ratio*ratio
-		var modulate = lerp(_origin_modulate, min_modulate, quad_ratio)
+		var modulate = lerp(_origin_modulate, min_modulate, ratio)
 		var scale_x = lerp(_origin_scale_x, min_scale, quad_ratio)
 
 		for i in range(sprites.size()):

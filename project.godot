@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "BouncingBox",
+"language": "GDScript",
+"path": "res://Scripts/BouncingBox.gd"
+}, {
 "base": "RigidBody2D",
 "class": "ButtonPush",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://Scripts/LevelExecuter.gd"
 } ]
 _global_script_class_icons={
+"BouncingBox": "",
 "ButtonPush": "",
 "Character": "",
 "Girl": "",

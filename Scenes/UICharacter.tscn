@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Images/box_character.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=2]
+
+[node name="UICharacter" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource( 2 )]
+scale = Vector2( 0.66, 0.66 )
+z_index = 1
+mode = 1
+sleeping = true
+can_move = false
+
+[node name="box_character" type="Sprite" parent="Character"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 4.54544, 6.06061 )
+z_index = -1
+texture = ExtResource( 1 )

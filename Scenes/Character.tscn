@@ -1,13 +1,19 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Images/box_character.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Arrow.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Eye.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ParticlesSmoke.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/SFX/hit.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Images/rope.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.0
+height = 32.0
 
 [node name="Character" type="RigidBody2D"]
 input_pickable = true
@@ -37,7 +43,50 @@ scale = Vector2( 1, 0.781009 )
 pupil_offset = 3.0
 scale_pupil = 1.5
 
+[node name="PinJoint2D" type="PinJoint2D" parent="CollisionShape2D"]
+visible = false
+position = Vector2( -20, 0 )
+node_a = NodePath("../..")
+node_b = NodePath("RigidBody2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="CollisionShape2D/PinJoint2D"]
+position = Vector2( 0, 13 )
+collision_layer = 4
+collision_mask = 8
+mass = 0.000166667
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/PinJoint2D/RigidBody2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="CollisionShape2D/PinJoint2D/RigidBody2D/CollisionShape2D"]
+modulate = Color( 0.207843, 0.333333, 1, 1 )
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 7 )
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="CollisionShape2D"]
+visible = false
+position = Vector2( 20, 0 )
+node_a = NodePath("../..")
+node_b = NodePath("RigidBody2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="CollisionShape2D/PinJoint2D2"]
+position = Vector2( 0, 13 )
+collision_layer = 4
+collision_mask = 8
+mass = 0.000166667
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/PinJoint2D2/RigidBody2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="CollisionShape2D/PinJoint2D2/RigidBody2D/CollisionShape2D"]
+modulate = Color( 0.152941, 0.32549, 1, 1 )
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 7 )
+
 [node name="Arrow" parent="." instance=ExtResource( 3 )]
 visible = false
+
+[node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 [connection signal="body_entered" from="." to="." method="_on_RigidBody2D_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_RigidBody2D_input_event"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lava_hisses.wav-f3f3ceef51bf083acc777e0f9f0681dc.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/lava_hisses.wav"
+dest_files=[ "res://.import/lava_hisses.wav-f3f3ceef51bf083acc777e0f9f0681dc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

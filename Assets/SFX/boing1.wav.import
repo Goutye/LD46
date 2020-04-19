@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/boing1.wav-63b10dd7c8300893f1cc2a19fe7460aa.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/boing1.wav"
+dest_files=[ "res://.import/boing1.wav-63b10dd7c8300893f1cc2a19fe7460aa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

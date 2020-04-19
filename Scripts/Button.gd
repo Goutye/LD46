@@ -28,6 +28,7 @@ func _push_button():
 	_is_pushed = true
 	
 	emit_signal("on_button_pushed")
+	$AudioStreamPlayer2D.play()
 
 func on_collide_player(body):
 	if not _is_pushed:

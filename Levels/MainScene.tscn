@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/LevelManager.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/heart.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Heart.gd" type="Script" id=3]
 [ext_resource path="res://Assets/visitor32.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scenes/HeartBroken.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,18 +15,24 @@ current = true
 
 [node name="LevelScene" type="Node2D" parent="."]
 
+[node name="HeartBroken" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 344 )
+
 [node name="Heart" type="Sprite" parent="."]
 position = Vector2( 512, 344 )
 z_index = 100
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="."]
-margin_right = 128.0
-margin_bottom = 48.0
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+visible = false
+margin_right = 759.0
+margin_bottom = 63.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Test
+text = "restart: R    Next level: N  prev level: B
 "
 __meta__ = {
 "_edit_use_anchors_": false

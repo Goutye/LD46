@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/girl_saved111.wav-e99458cf81e6579768a65e3f3390b21f.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/girl_saved111.wav"
+dest_files=[ "res://.import/girl_saved111.wav-e99458cf81e6579768a65e3f3390b21f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
