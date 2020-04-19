@@ -15,6 +15,7 @@ mass = 3.06122
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 2 )
+can_track_collisions = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

@@ -14,7 +14,7 @@ func initialize(character : RigidBody2D):
 
 func _process(delta):
 	if is_mouse_target:
-		if owner_rigid_body.linear_velocity.length() < 10:
+		if owner_rigid_body is Girl or owner_rigid_body.linear_velocity.length() < 10:
 			update_eye_position(get_global_mouse_position())
 		else:
 			var target = owner_rigid_body.global_position + owner_rigid_body.linear_velocity

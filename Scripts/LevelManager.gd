@@ -1,7 +1,7 @@
 extends Node2D
 
 var levels = ['001', '002', '003', '004', '005', '006', '007', '008']
-var current_level := 0
+var current_level := 7
 var current_level_scene = null
 
 func _ready():
@@ -11,6 +11,9 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
 		load_current_level()
+		
+	if current_level_scene != null:
+		$Label.text = str(current_level_scene.get_nb_collisions())
 
 func load_current_level():
 	#clean up

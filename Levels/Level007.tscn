@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/CharacterBall.tscn" type="PackedScene" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/LevelExecuter.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Rope.tscn" type="PackedScene" id=8]
 
 [node name="Level" type="Node2D"]
+position = Vector2( -1, 0 )
 script = ExtResource( 6 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -35,6 +37,12 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 328, 128 )
 scale = Vector2( 2, 2 )
 
+[node name="Rope" parent="Other" instance=ExtResource( 8 )]
+position = Vector2( 824, 326 )
+
+[node name="PinJoint2D" parent="Other/Rope/CollisionShape2D/PinJoint2D/ChainPiece/CollisionShape2D/PinJoint2D/ChainPiece2/CollisionShape2D/PinJoint2D/ChainPiece3/CollisionShape2D" index="0"]
+node_b = NodePath("../../../../../../../../../../../../../Characters/Girl")
+
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Girl" parent="Characters" instance=ExtResource( 3 )]
@@ -52,3 +60,5 @@ impulse_multiplier = 35.0
 position = Vector2( 192, 96 )
 [connection signal="on_button_pushed" from="Other/Button" to="Other/Door" method="on_button_pushed"]
 [connection signal="body_entered" from="Characters/Girl" to="Characters/Girl" method="_on_Girl_body_entered"]
+
+[editable path="Other/Rope"]
