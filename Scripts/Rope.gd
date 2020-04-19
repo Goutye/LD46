@@ -40,7 +40,11 @@ func _process(delta):
 			detach()
 
 func detach():
+	$AudioStreamPlayer2D.play()
 	var joint = $CollisionShape2D/PinJoint2D/ChainPiece/CollisionShape2D/PinJoint2D/ChainPiece2/CollisionShape2D/PinJoint2D/ChainPiece3/CollisionShape2D/PinJoint2D
 	joint.node_b = NodePath("")
 
 	_is_broken = true
+
+func get_time_ratio():
+	return current_rope_time / rope_time

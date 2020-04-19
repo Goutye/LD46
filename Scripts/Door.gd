@@ -22,3 +22,4 @@ func on_button_pushed():
 
 func _on_Button_on_button_pushed():
 	toggle_door()
+

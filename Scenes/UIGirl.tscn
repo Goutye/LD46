@@ -11,9 +11,17 @@ z_index = 1
 mode = 1
 sleeping = true
 
+[node name="Tears" parent="Girl/CollisionShape2D/Sprite/Eye" index="1"]
+emitting = false
+
+[node name="Tears" parent="Girl/CollisionShape2D/Sprite/Eye2" index="1"]
+emitting = false
+
 [node name="box_character2" type="Sprite" parent="Girl"]
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 6.06018, 6.06067 )
 scale = Vector2( 0.6, 0.6 )
 z_index = -1
 texture = ExtResource( 1 )
+
+[editable path="Girl"]

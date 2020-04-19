@@ -91,22 +91,22 @@ __meta__ = {
 position = Vector2( 50, -15 )
 
 [node name="Label2" type="Label" parent="UI/SentenceSaved"]
-margin_left = 95.0
+margin_left = 31.0
 margin_top = 175.0
-margin_right = 746.0
+margin_right = 682.0
 margin_bottom = 238.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
-text = "You kept
+text = "You kept   alive
 "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="heart" type="Sprite" parent="UI/SentenceSaved/Label2"]
-position = Vector2( 232, 16 )
+position = Vector2( 315, 16 )
 z_index = 1
 texture = ExtResource( 11 )
 
@@ -117,9 +117,9 @@ z_index = -1
 texture = ExtResource( 11 )
 
 [node name="LabelGirlSaved" type="Label" parent="UI/SentenceSaved"]
-margin_left = 362.0
+margin_left = 372.0
 margin_top = 176.0
-margin_right = 1013.0
+margin_right = 1023.0
 margin_bottom = 225.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -131,7 +131,7 @@ __meta__ = {
 }
 
 [node name="UIGirl" parent="UI/SentenceSaved" instance=ExtResource( 7 )]
-position = Vector2( 279, 191 )
+position = Vector2( 210, 191 )
 
 [node name="SentenceKilled" type="Node2D" parent="UI"]
 position = Vector2( 67, 25 )
@@ -187,7 +187,7 @@ __meta__ = {
 }
 
 [node name="SentenceCharacter" type="Node2D" parent="UI"]
-position = Vector2( -20, 53 )
+position = Vector2( -46, 46 )
 
 [node name="UICharacter" parent="UI/SentenceCharacter" instance=ExtResource( 10 )]
 position = Vector2( 761, 208 )
@@ -229,7 +229,7 @@ custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
-text = "0 propulsions"
+text = "50 propulsions"
 __meta__ = {
 "_edit_use_anchors_": false
 }

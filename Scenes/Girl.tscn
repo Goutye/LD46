@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Eye.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/girl_character.png" type="Texture" id=2]
@@ -8,19 +8,34 @@
 [ext_resource path="res://Assets/SFX/girl_saved111.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/SFX/girl_saved11.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/SFX/girl_saved1.wav" type="AudioStream" id=8]
-
-
+[ext_resource path="res://Assets/Images/tears.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22, 22 )
 
-[sub_resource type="Curve" id=2]
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.0787879, 0.763636, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 7 )
+
+[sub_resource type="Curve" id=3]
 _data = [ Vector2( 0.0106383, 0.256818 ), 0.0, 0.0, 0, 0, Vector2( 0.319149, 0.720455 ), 1.98255, 1.98255, 0, 0, Vector2( 0.829787, 0.993182 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -6.15273, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=3]
-curve = SubResource( 2 )
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=5]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 52.06
@@ -29,7 +44,7 @@ initial_velocity = 100.0
 initial_velocity_random = 0.54
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 3 )
+scale_curve = SubResource( 4 )
 
 [node name="Girl" type="RigidBody2D"]
 mass = 1.25
@@ -48,10 +63,22 @@ position = Vector2( -6.06205, -2.5743 )
 scale = Vector2( 0.75, 0.75 )
 pupil_offset = 3.0
 
+[node name="Tears" type="Particles2D" parent="CollisionShape2D/Sprite/Eye"]
+position = Vector2( 0, 7 )
+amount = 1
+process_material = SubResource( 2 )
+texture = ExtResource( 9 )
+
 [node name="Eye2" parent="CollisionShape2D/Sprite" instance=ExtResource( 1 )]
 position = Vector2( 6.06206, -2.5743 )
 scale = Vector2( 0.75, 0.75 )
 pupil_offset = 3.0
+
+[node name="Tears" type="Particles2D" parent="CollisionShape2D/Sprite/Eye2"]
+position = Vector2( 0, 7 )
+amount = 1
+process_material = SubResource( 2 )
+texture = ExtResource( 9 )
 
 [node name="ParticleHeart" type="Particles2D" parent="CollisionShape2D/Sprite"]
 position = Vector2( -1.27203, -13.2377 )
@@ -59,7 +86,7 @@ z_index = 2
 emitting = false
 amount = 4
 local_coords = false
-process_material = SubResource( 4 )
+process_material = SubResource( 5 )
 texture = ExtResource( 4 )
 
 [node name="ParticleHeart2" type="Particles2D" parent="CollisionShape2D/Sprite"]
@@ -67,7 +94,7 @@ position = Vector2( -1.27203, -13.2377 )
 z_index = 2
 emitting = false
 local_coords = false
-process_material = SubResource( 4 )
+process_material = SubResource( 5 )
 texture = ExtResource( 5 )
 
 [node name="AudioKiss" type="Node2D" parent="."]

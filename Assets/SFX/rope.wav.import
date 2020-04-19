@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rope.wav-01f73ce807784a7ef2bc9a106d9fe682.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/rope.wav"
+dest_files=[ "res://.import/rope.wav-01f73ce807784a7ef2bc9a106d9fe682.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

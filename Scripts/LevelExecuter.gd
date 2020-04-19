@@ -13,8 +13,9 @@ export var rope_time = 10
 var characters_stats = []
 
 func _ready():
+	$Characters/Girl.initialize(self)
 	$Characters/Girl.connect("hit_by_character", self, "_on_girl_hit_by_character")
-	$Characters/Girl.connect("has_died", self, "_on_girl_died")
+	$Characters/Girl.connect("has_died", self, "_on_girl_died")\
 	
 	_timer_rope = Timer.new()
 	_timer_rope.one_shot = true
@@ -64,10 +65,13 @@ func _on_girl_died():
 	
 func _on_rope_timer_timeout():
 	$Other/Rope2.detach()
-		
-		
+				
 func get_nb_collisions():
 	var nb_collisions = 0
 	for character in characters_stats:
 		nb_collisions += character.nb_collisions
 	return nb_collisions
+
+func get_time_ratio_before_rope_breaks():
+	return $Other/Rope.get_time_ratio()
+
