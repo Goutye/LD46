@@ -48,17 +48,19 @@ position = Vector2( 6.06206, -2.5743 )
 scale = Vector2( 0.75, 0.75 )
 pupil_offset = 3.0
 
-[node name="ParticleHeart" type="Particles2D" parent="CollisionShape2D"]
+[node name="ParticleHeart" type="Particles2D" parent="CollisionShape2D/Sprite"]
 position = Vector2( -1.27203, -13.2377 )
 z_index = 2
 emitting = false
 amount = 4
+local_coords = false
 process_material = SubResource( 4 )
 texture = ExtResource( 4 )
 
-[node name="ParticleHeart2" type="Particles2D" parent="CollisionShape2D"]
+[node name="ParticleHeart2" type="Particles2D" parent="CollisionShape2D/Sprite"]
 position = Vector2( -1.27203, -13.2377 )
 z_index = 2
 emitting = false
+local_coords = false
 process_material = SubResource( 4 )
 texture = ExtResource( 5 )

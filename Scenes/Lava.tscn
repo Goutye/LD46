@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/lava1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/lava2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/lava3.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Lava.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 16 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[node name="Lava" type="Area2D"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 32, -16 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 32, -32 )
+z_index = 5
+frames = SubResource( 1 )
+playing = true
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]

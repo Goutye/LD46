@@ -12,6 +12,7 @@ onready var smoke_particles = [$CollisionShape2D/ParticlesSmoke/ParticlesSmoke, 
 var nb_collisions := 0
 var old_velocity := Vector2(0, 0)
 var has_collided_with_girl := false
+var is_dead := false
 
 func _ready():
 	eye1.initialize(self)
@@ -65,3 +66,8 @@ func on_collision_with_girl(body):
 	eye2.set_target(body.position)
 	has_collided_with_girl = true
 		
+func on_hit_by_lava():
+	if not is_dead:
+		is_dead = true
+		flux.to($CollisionShape2D, 0.8, {scale_x = 0.01}, "absolute").ease("quad","out")
+		flux.to($CollisionShape2D, 0.8, {scale_y = 0.01}, "absolute").ease("quad","out")
