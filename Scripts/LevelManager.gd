@@ -22,7 +22,8 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
-		load_current_level()
+		if not _level_loading_in_progress:
+			load_current_level()
 	if not _level_loading_in_progress:
 		if Input.is_action_just_pressed("prev_level"):
 			on_level_end(false)

@@ -51,7 +51,7 @@ scale = Vector2( 3, 3 )
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="RigidBody2D" parent="Characters" instance=ExtResource( 4 )]
-position = Vector2( 416, 528 )
+position = Vector2( 418, 528 )
 
 [node name="Girl" parent="Characters" instance=ExtResource( 5 )]
 position = Vector2( 608, 144 )
