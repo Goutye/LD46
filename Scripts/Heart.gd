@@ -5,6 +5,7 @@ export var duration_start = 0.8
 export var duration_end = 2.5
 
 signal anim_end
+signal start_level_anim_end
 
 func _ready():
 	scale = Vector2(0.01, 0.01)
@@ -26,3 +27,4 @@ func on_anim_end_end():
 
 func on_anim_start_end():
 	visible = false
+	emit_signal("start_level_anim_end")

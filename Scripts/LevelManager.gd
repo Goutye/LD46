@@ -9,6 +9,7 @@ var levels = ['Title', '001', '002', '003', \
 var current_level := 0
 var current_level_scene = null
 var was_alive = false
+var _level_loading_in_progress = false
 
 onready var global = get_node("/root/global")
 
@@ -16,16 +17,19 @@ func _ready():
 	load_current_level()
 	$Heart.connect("anim_end", self, "on_anim_end")
 	$HeartBroken.connect("end_level_anim_end", self, "on_anim_end")
+	$Heart.connect("start_level_anim_end", self, "on_start_level_anim_end")
+	$HeartBroken.connect("start_level_anim_end", self, "on_start_level_anim_end")
 
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
 		load_current_level()
-	if Input.is_action_just_pressed("prev_level"):
-		on_level_end(false)
-		current_level = (current_level - 1 + levels.size()) % levels.size()
-	if Input.is_action_just_pressed("next_level"):
-		on_level_end(false)
-		current_level = (current_level + 1) % levels.size()
+	if not _level_loading_in_progress:
+		if Input.is_action_just_pressed("prev_level"):
+			on_level_end(false)
+			current_level = (current_level - 1 + levels.size()) % levels.size()
+		if Input.is_action_just_pressed("next_level"):
+			on_level_end(false)
+			current_level = (current_level + 1) % levels.size()
 		
 	if current_level_scene != null:
 		$UI/Label.text = 'Level ' + levels[current_level]
@@ -49,6 +53,7 @@ func load_current_level():
 	
 
 func on_level_end(is_alive):
+	_level_loading_in_progress = true
 	was_alive = is_alive
 	
 	if is_alive:
@@ -62,6 +67,9 @@ func on_level_end(is_alive):
 
 func on_anim_end():
 	load_current_level()
+
+func on_start_level_anim_end():
+	_level_loading_in_progress = false
 
 func get_time_ratio_before_rope_breaks():
 	return current_level_scene.get_time_ratio_before_rope_breaks()

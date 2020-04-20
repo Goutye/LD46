@@ -44,7 +44,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="LD46"
+config/name="LD46-PrincessRibbon"
+config/description="LD46 Compo 48h (solo)"
 run/main_scene="res://Levels/MainScene.tscn"
 config/icon="res://icon.png"
 
