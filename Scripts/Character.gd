@@ -80,5 +80,6 @@ func on_hit_by_lava():
 		global.character_nb_killed += 1
 		
 		is_dead = true
+		is_dragging = false
 		flux.to($CollisionShape2D, 0.8, {scale_x = 0.01}, "absolute").ease("quad","out")
 		flux.to($CollisionShape2D, 0.8, {scale_y = 0.01}, "absolute").ease("quad","out")
