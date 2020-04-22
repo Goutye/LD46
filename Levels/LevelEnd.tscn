@@ -263,6 +263,184 @@ text = "20:00"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SentenceTimeDetail" type="Node2D" parent="UI"]
+position = Vector2( 9, 448 )
+
+[node name="Group1" type="Node2D" parent="UI/SentenceTimeDetail"]
+visible = false
+position = Vector2( 15, 0 )
+
+[node name="LabelNumber" type="Label" parent="UI/SentenceTimeDetail/Group1"]
+margin_right = 128.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 176, 56 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "1
+2
+3
+4
+5
+6
+7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTime" type="Label" parent="UI/SentenceTimeDetail/Group1"]
+margin_left = 32.0
+margin_right = 112.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 176, 56 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "0:00
+0:00
+0:00
+0:00
+0:00
+0:00
+0:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Group2" type="Node2D" parent="UI/SentenceTimeDetail"]
+visible = false
+position = Vector2( 175, 0 )
+
+[node name="LabelNumber" type="Label" parent="UI/SentenceTimeDetail/Group2"]
+margin_left = -12.0
+margin_right = 116.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 176, 56 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "1
+2
+3
+4
+5
+6
+7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTime" type="Label" parent="UI/SentenceTimeDetail/Group2"]
+margin_left = 32.0
+margin_right = 112.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 176, 56 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "0:00
+0:00
+0:00
+0:00
+0:00
+0:00
+0:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Group3" type="Node2D" parent="UI/SentenceTimeDetail"]
+visible = false
+position = Vector2( 732, 0 )
+
+[node name="LabelNumber" type="Label" parent="UI/SentenceTimeDetail/Group3"]
+margin_left = -12.0
+margin_right = 116.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 176, 56 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "1
+2
+3
+4
+5
+6
+7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTime" type="Label" parent="UI/SentenceTimeDetail/Group3"]
+margin_left = 32.0
+margin_right = 112.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 176, 56 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "0:00
+0:00
+0:00
+0:00
+0:00
+0:00
+0:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Group4" type="Node2D" parent="UI/SentenceTimeDetail"]
+visible = false
+position = Vector2( 880, 0 )
+
+[node name="LabelNumber" type="Label" parent="UI/SentenceTimeDetail/Group4"]
+margin_left = -12.0
+margin_right = 116.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 176, 56 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "1
+2
+3
+4
+5
+6
+7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTime" type="Label" parent="UI/SentenceTimeDetail/Group4"]
+margin_left = 32.0
+margin_right = 112.0
+margin_bottom = 184.0
+rect_pivot_offset = Vector2( 176, 56 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "0:00
+0:00
+0:00
+0:00
+0:00
+0:00
+0:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Characters/Girl" to="Characters/Girl" method="_on_Girl_body_entered"]
 
 [editable path="Other/Rope"]

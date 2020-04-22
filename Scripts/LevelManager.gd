@@ -1,5 +1,7 @@
 extends Node2D
 
+signal level_start(level_nb)
+
 var levels = ['Title', '001', '002', '003', \
 			'101', '103', '104', '105', \
 			'200', '201', '202', '204',\
@@ -19,6 +21,8 @@ func _ready():
 	$HeartBroken.connect("end_level_anim_end", self, "on_anim_end")
 	$Heart.connect("start_level_anim_end", self, "on_start_level_anim_end")
 	$HeartBroken.connect("start_level_anim_end", self, "on_start_level_anim_end")
+
+	self.connect("level_start", global, "on_level_start")
 
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
@@ -52,6 +56,7 @@ func load_current_level():
 	else :
 		$HeartBroken.play_start_level_transition()
 	
+	emit_signal("level_start", current_level)
 
 func on_level_end(is_alive):
 	_level_loading_in_progress = true
@@ -60,9 +65,6 @@ func on_level_end(is_alive):
 	if is_alive:
 		current_level = (current_level + 1) % levels.size()
 		$Heart.play_end_level_transition()
-
-		if current_level == 1:
-			global.reset_stats()
 	else:
 		$HeartBroken.play_end_level_transition()
 

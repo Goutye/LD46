@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/LevelManager.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/heart.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Musics/lead1.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Musics/chord1.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Musics/lead2.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Scripts/LevelTimeDisplayer.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/AudioStreamPlayer.gd" type="Script" id=11]
 
 [node name="Node2D" type="Node2D"]
@@ -30,6 +31,7 @@ texture = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="UI" type="Node2D" parent="."]
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="UI"]
 visible = false
@@ -56,6 +58,24 @@ custom_constants/shadow_offset_y = 5
 text = "Mute musics: M
 restart: R "
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeLabel" type="Label" parent="UI"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_right = 1024.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "Mute musics: M
+restart: R "
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -104,6 +124,7 @@ stream = ExtResource( 8 )
 volume_db = -80.0
 autoplay = true
 script = ExtResource( 11 )
+[connection signal="level_start" from="." to="UI" method="on_level_start"]
 [connection signal="finished" from="MusicManager/AudioStreamPlayer" to="MusicManager/AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]
 [connection signal="finished" from="MusicManager/AudioStreamPlayer2" to="MusicManager/AudioStreamPlayer2" method="_on_AudioStreamPlayer_finished"]
 [connection signal="finished" from="MusicManager/AudioStreamPlayer3" to="MusicManager/AudioStreamPlayer3" method="_on_AudioStreamPlayer_finished"]
